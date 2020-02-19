@@ -17,8 +17,6 @@ public class Funcionario {
     private double salario;
     private double inss;
 
-  
-    
     /**
      * @return the codigo
      */
@@ -83,8 +81,18 @@ public class Funcionario {
         return inss;
     }
 
-    public void CalcularSalario() {
-        salario -= getInss();
+    public double CalcularSalario() {
+        return salario -= getInss();
+    }
+
+    @Override
+    public String toString() {
+        return "Código: " + this.getCodigo()
+                + "\nNome: " + this.getNome()
+                + "\nRG: " + this.getRg()
+                + "\nSalario Bruto: " + this.getSalario()
+                + "\nINSS: " + this.getInss()
+                + "\nSalario Liquido: " + CalcularSalario();
     }
 
 }
